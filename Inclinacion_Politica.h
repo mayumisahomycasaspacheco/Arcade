@@ -10,7 +10,7 @@ protected:
 	int cantidad;
 public:
 	Inclinacion_Politica(string pnombre, int ppuntaje, int pcantidad);
-	~Inclinacion_Politica();
+	virtual ~Inclinacion_Politica();
 
 	string getnombre();
 	int getpuntaje();

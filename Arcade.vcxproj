@@ -123,9 +123,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Centro.h" />
+    <ClInclude Include="Derecha_Conservadora.h" />
     <ClInclude Include="Derecha_Liberal.h" />
     <ClInclude Include="Inclinacion_Politica.h" />
+    <ClInclude Include="Izquierda_Conservadora.h" />
+    <ClInclude Include="Izquierda_Liberal.h" />
     <ClInclude Include="Solicitud.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

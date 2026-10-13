@@ -9,6 +9,8 @@ private:
 public:
 	Izquierda_Conservadora();
 	~Izquierda_Conservadora();
+
+	int evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4);
 };
 
 Izquierda_Conservadora::Izquierda_Conservadora() : Inclinacion_Politica("Izquierda Conservadora", 0, 0)
@@ -19,4 +21,22 @@ Izquierda_Conservadora::Izquierda_Conservadora() : Inclinacion_Politica("Izquier
 Izquierda_Conservadora::~Izquierda_Conservadora()
 {
 	//Destructor vacio
+}
+
+int Izquierda_Conservadora::evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4)
+{
+	puntaje = 0;
+
+	if (respuesta1 == 'N')
+	{
+		puntaje = puntaje + 1;
+	}
+
+	if (respuesta2 == 'N')
+	{
+		puntaje = puntaje + 1;
+	}
+
+	return puntaje;
+
 }

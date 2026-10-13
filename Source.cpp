@@ -33,6 +33,9 @@ int main()
 	cout << centro.getpuntaje() << endl;
 	cout << centro.getcantidad() << endl;
 
+	cout << derecha_conservadora.evaluar('S', 'S', 'X', 'X') << endl;
+	cout << izquierda_conservadora.evaluar('N', 'N', 'X', 'X') << endl;
+
 	system("pause");
 	return 0;
 }

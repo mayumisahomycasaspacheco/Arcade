@@ -10,6 +10,8 @@ private:
 public:
 	Derecha_Liberal();
 	~Derecha_Liberal();
+
+	int evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4);
 };
 
 Derecha_Liberal::Derecha_Liberal() : Inclinacion_Politica("Derecha Liberal", 0, 0)
@@ -20,4 +22,21 @@ Derecha_Liberal::Derecha_Liberal() : Inclinacion_Politica("Derecha Liberal", 0, 
 Derecha_Liberal::~Derecha_Liberal()
 {
 	//Destructor vacio
+}
+
+int Derecha_Liberal::evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4)
+{
+	puntaje = 0;
+
+	if (respuesta1 == 'N')
+	{
+		puntaje = puntaje + 1;
+	}
+
+	if (respuesta2 == 'S')
+	{
+		puntaje == puntaje + 1;
+	}
+
+	return puntaje;
 }

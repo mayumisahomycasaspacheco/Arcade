@@ -11,6 +11,7 @@ protected:
 public:
 	Inclinacion_Politica(string pnombre, int ppuntaje, int pcantidad);
 	virtual ~Inclinacion_Politica();
+	virtual int evaluar(char respuesta1, char respuesta2, char respuesta3, char repsuesta4) = 0;
 
 	string getnombre();
 	int getpuntaje();

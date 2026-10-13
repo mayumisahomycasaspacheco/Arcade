@@ -60,3 +60,33 @@ char Solicitud::getrespuesta4()
 {
 	return respuesta4;
 }
+
+string Solicitud::getresultado()
+{
+	return resultado;
+}
+
+void Solicitud::setrespuesta1(char prespuesta1)
+{
+	respuesta1 = prespuesta1;
+}
+
+void Solicitud::setrespuesta2(char prespuesta2)
+{
+	respuesta2 = prespuesta2;
+}
+
+void Solicitud::setrespuesta3(char prespuesta3)
+{
+	respuesta3 = prespuesta3;
+}
+
+void Solicitud::setrespuesta4(char prespuesta4)
+{
+	respuesta4 = prespuesta4;
+}
+
+void Solicitud::setresultado(string presultado)
+{
+	resultado = presultado;
+}

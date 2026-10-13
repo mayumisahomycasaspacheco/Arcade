@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\YUYU\\Desktop\\Arcade\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Derecha_Liberal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Derecha_Liberal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Inclinacion_Politica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Inclinacion_Politica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Solicitud.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Solicitud.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,13 +30,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Inclinacion_Politica.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Inclinacion_Politica.h",
+              "RelativeDocumentMoniker": "Inclinacion_Politica.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Inclinacion_Politica.h",
+              "RelativeToolTip": "Inclinacion_Politica.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-13T03:47:28.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Derecha_Liberal.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Derecha_Liberal.h",
+              "RelativeDocumentMoniker": "Derecha_Liberal.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Derecha_Liberal.h",
+              "RelativeToolTip": "Derecha_Liberal.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-13T04:42:07.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Solicitud.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Solicitud.h",
               "RelativeDocumentMoniker": "Solicitud.h",
               "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Solicitud.h",
               "RelativeToolTip": "Solicitud.h",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-13T00:46:33.535Z",
               "EditorCaption": ""

@@ -123,6 +123,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Derecha_Liberal.h" />
+    <ClInclude Include="Inclinacion_Politica.h" />
     <ClInclude Include="Solicitud.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

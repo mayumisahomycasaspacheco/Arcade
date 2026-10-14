@@ -132,6 +132,7 @@
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Solicitud.h" />
     <ClInclude Include="Suscripcion.h" />
+    <ClInclude Include="Suscripcion_Video.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />

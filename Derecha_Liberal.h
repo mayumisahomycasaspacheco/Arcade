@@ -35,7 +35,7 @@ int Derecha_Liberal::evaluar(char respuesta1, char respuesta2, char respuesta3, 
 
 	if (respuesta2 == 'S')
 	{
-		puntaje == puntaje + 1;
+		puntaje = puntaje + 1;
 	}
 
 	return puntaje;

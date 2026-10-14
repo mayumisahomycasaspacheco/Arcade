@@ -20,6 +20,7 @@ public:
 
 	void agregar_solicitud(Solicitud* psolicitud);
 	void ingresar_datos();
+	void reporte();
 };
 
 Robot::Robot()
@@ -101,11 +102,14 @@ void Robot::ingresar_datos()
 		}
 	}
 
+	string resultado = "";
+
 	cout << "RESULTADO" << endl;
 
 	if (puntaje_mayor == 0)
 	{
 		cout << "No se pudo determinar su inlinación política" << endl;
+		resultado = "Sin determinar";
 	}
 	else
 	{
@@ -116,7 +120,25 @@ void Robot::ingresar_datos()
 			if (inclinacion[i]->getpuntaje() == puntaje_mayor)
 			{
 				cout << inclinacion[i]->getnombre() << endl;
+				resultado = resultado + inclinacion[i]->getnombre() + " ";
+				inclinacion[i]->setcantidad(inclinacion[i]->getcantidad() + 1);
 			}
 		}
 	}
+
+	Solicitud* psolicitud = new Solicitud(respuesta1, respuesta2, respuesta3, respuesta4, resultado);
+	agregar_solicitud(psolicitud);
+}
+
+void Robot::reporte()
+{
+	cout << "ROBOT POLÍTICO" << endl;
+	cout << "REPORTE TOTAL: " << endl;
+
+	for (int i = 0; i < 5; i++)
+	{
+		cout << inclinacion[i]->getnombre() << ":" << inclinacion[i]->getcantidad() << " encuestados" << endl;
+	}
+
+	cout << "Total de personas atendidas: " << encuestados << endl;
 }

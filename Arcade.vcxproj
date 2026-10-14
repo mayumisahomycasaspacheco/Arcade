@@ -131,6 +131,7 @@
     <ClInclude Include="Izquierda_Liberal.h" />
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Solicitud.h" />
+    <ClInclude Include="Suscripcion.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />

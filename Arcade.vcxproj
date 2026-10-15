@@ -132,6 +132,7 @@
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Solicitud.h" />
     <ClInclude Include="Suscripcion.h" />
+    <ClInclude Include="Suscripcion_Gaming.h" />
     <ClInclude Include="Suscripcion_Musica.h" />
     <ClInclude Include="Suscripcion_Video.h" />
   </ItemGroup>

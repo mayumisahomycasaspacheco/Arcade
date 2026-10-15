@@ -66,3 +66,32 @@ void Suscripcion_Video::setpremium(bool ppremium)
 {
 	premium = ppremium;
 }
+
+double Suscripcion_Video::calcular_importe()
+{
+	double total = tarifa_base;
+
+	if (resolucion == "4K")
+	{
+		total = total + 10;
+	}
+
+	if (numero_pantallas > 1)
+	{
+		total = total + (numero_pantallas - 1) * 2;
+	}
+
+	if (premium)
+	{
+		total = total + 3;
+	}
+
+	return total;
+}
+
+void Suscripcion_Video::mostrar_detalles()
+{
+	cout << "[SERVICIO DE VIDEO]" << endl;
+	Suscripcion::mostrar_detalles();
+	cout << "Resolucion: " << resolucion << " | Pantallas: " << numero_pantallas << " | Importe Final: S/ " << calcular_importe() << endl;
+}

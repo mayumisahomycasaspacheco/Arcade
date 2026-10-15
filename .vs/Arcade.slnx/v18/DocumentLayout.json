@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\YUYU\\Desktop\\Arcade\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Gaming.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Suscripcion_Gaming.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Video.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Suscripcion_Video.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Musica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Suscripcion_Musica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Gaming.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Suscripcion_Gaming.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,39 +34,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Suscripcion_Gaming.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Gaming.h",
               "RelativeDocumentMoniker": "Suscripcion_Gaming.h",
               "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Gaming.h",
               "RelativeToolTip": "Suscripcion_Gaming.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-15T00:49:23.53Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Suscripcion_Video.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Video.h",
               "RelativeDocumentMoniker": "Suscripcion_Video.h",
               "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Video.h",
               "RelativeToolTip": "Suscripcion_Video.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-14T01:49:53.287Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Suscripcion_Musica.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Musica.h",
               "RelativeDocumentMoniker": "Suscripcion_Musica.h",
               "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion_Musica.h",
               "RelativeToolTip": "Suscripcion_Musica.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-14T17:53:49.416Z",
               "EditorCaption": ""
@@ -79,7 +79,7 @@
               "RelativeDocumentMoniker": "Suscripcion.h",
               "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion.h",
               "RelativeToolTip": "Suscripcion.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-14T00:40:01.003Z",
               "EditorCaption": ""

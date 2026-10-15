@@ -52,3 +52,26 @@ void Suscripcion_Musica::setmodo_offline(bool pmodo_offline)
 {
 	modo_offline = pmodo_offline;
 }
+
+double Suscripcion_Musica::calcular_importe()
+{
+	double total = tarifa_base;
+
+
+	if (calidad_audio == "Alta")
+	{
+		total = total + 3;
+	}
+
+	else if (calidad_audio == "HiFi")
+	{
+		total = total + 6;
+	}
+
+	if (modo_offline)
+	{
+		total = total + 4;
+	}
+
+	return total;
+}

@@ -75,3 +75,15 @@ double Suscripcion_Musica::calcular_importe()
 
 	return total;
 }
+
+void Suscripcion_Musica::mostrar_detalles()
+{
+	cout << "[SERVICIO MUSICA]" << endl;
+	Suscripcion::mostrar_detalles();
+	cout << "Calidad Audio: " << calidad_audio << " | Offline: " << (modo_offline ? "Si" : "No") << " | Importe Final: S/ " << calcular_importe() << endl;
+}
+
+string Suscripcion_Musica::gettipo()
+{
+	return "MUSICA";
+}

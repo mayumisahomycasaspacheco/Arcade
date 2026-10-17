@@ -95,3 +95,8 @@ void Suscripcion_Video::mostrar_detalles()
 	Suscripcion::mostrar_detalles();
 	cout << "Resolucion: " << resolucion << " | Pantallas: " << numero_pantallas << " | Importe Final: S/ " << calcular_importe() << endl;
 }
+
+string Suscripcion_Video::gettipo()
+{
+	return "VIDEO";
+}

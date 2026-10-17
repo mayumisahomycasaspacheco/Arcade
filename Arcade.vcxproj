@@ -129,6 +129,7 @@
     <ClInclude Include="Inclinacion_Politica.h" />
     <ClInclude Include="Izquierda_Conservadora.h" />
     <ClInclude Include="Izquierda_Liberal.h" />
+    <ClInclude Include="Plataforma.h" />
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Solicitud.h" />
     <ClInclude Include="Suscripcion.h" />

@@ -80,3 +80,15 @@ double Suscripcion_Gaming::calcular_importe()
 	total = total + almacenamiento_nube * 0.1;
 	return total;
 }
+
+void Suscripcion_Gaming::mostrar_detalles()
+{
+	cout << "[SERVICIO GAMING]" << endl;
+	Suscripcion::mostrar_detalles();
+	cout << "Plataforma: " << plataforma << " | Beta: " << (acceso_beta ? "Si" : "No") << " | Nube: " << almacenamiento_nube << " GB | Importe Final: S/ " << calcular_importe() << endl;
+}
+
+string Suscripcion_Gaming::gettipo()
+{
+	return "GAMING";
+}

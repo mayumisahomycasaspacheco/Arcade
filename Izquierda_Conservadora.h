@@ -11,6 +11,7 @@ public:
 	~Izquierda_Conservadora();
 
 	int evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4);
+	string descripcion();
 };
 
 Izquierda_Conservadora::Izquierda_Conservadora() : Inclinacion_Politica("Izquierda Conservadora", 0, 0)
@@ -39,4 +40,9 @@ int Izquierda_Conservadora::evaluar(char respuesta1, char respuesta2, char respu
 
 	return puntaje;
 
+}
+
+string Izquierda_Conservadora::descripcion()
+{
+	return "Une la busqueda de igualdad social con posturas culturales tradicionales. Desconfia de mezclar Estado, religion y valores impuestos.";
 }

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\YUYU\\Desktop\\Arcade\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Plataforma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Plataforma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -27,19 +31,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Source.cpp",
+              "RelativeDocumentMoniker": "Source.cpp",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Source.cpp",
+              "RelativeToolTip": "Source.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-17T18:13:55.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Plataforma.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Plataforma.h",
               "RelativeDocumentMoniker": "Plataforma.h",
               "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Plataforma.h",
               "RelativeToolTip": "Plataforma.h",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAAADcBAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-17T01:08:01.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Suscripcion.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Suscripcion.h",
               "RelativeDocumentMoniker": "Suscripcion.h",
@@ -47,7 +64,8 @@
               "RelativeToolTip": "Suscripcion.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-10-14T00:40:01.003Z"
+              "WhenOpened": "2026-10-14T00:40:01.003Z",
+              "EditorCaption": ""
             }
           ]
         }

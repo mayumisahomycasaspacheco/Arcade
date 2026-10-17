@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include <cctype>
 #include "Suscripcion.h"
@@ -18,6 +20,9 @@ private:
 	double leer_decimal(string pmensaje);
 	bool leer_si_no(string pmensaje);
 	void leer_fecha(int& pdia, int& pmes, int& panio);
+	bool fecha_valida(int pdia, int pmes, int panio);
+	double ingresos_totales();
+	int nivel_para(double ptotal);
 public:
 	Plataforma();
 	~Plataforma();
@@ -270,4 +275,49 @@ void Plataforma::buscar_por_id(int pid_busqueda)
 	}
 
 	cout << "Error: ID no encontrado" << endl;
+}
+
+void Plataforma::reporte_por_tipo()
+{
+	int tipo = leer_entero("Filtrar: [1] Video [2] Musica [3] Gaming: ", 1, 3);
+	string nombre;
+	if (tipo == 1)
+	{
+		nombre = "VIDEO";
+	}
+
+	else if (tipo == 2)
+	{
+		nombre = "MUSICA";
+	}
+
+	else
+	{
+		nombre = "GAMING";
+	}
+
+	double total = 0;
+	int encontrados = 0;
+	cout << " " << endl;
+
+	for (int i = 0; i < cantidad; i++)
+	{
+		if (suscripcion[i]->gettipo() == nombre)
+		{
+			suscripcion[i]->mostrar_detalles();
+			cout << " " << endl;
+			total = total + suscripcion[i]->calcular_importe();
+			encontrados++;
+		}
+	}
+
+	if (encontrados == 0)
+	{
+		cout << "No hay suscripciones de tipo " << nombre << "." << endl;
+	}
+
+	else
+	{
+		cout << "Total recaudado en " << nombre << ": S/ " << total << endl;
+	}
 }

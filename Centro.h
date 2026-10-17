@@ -11,6 +11,7 @@ public:
 	~Centro();
 
 	int evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4);
+	string descripcion();
 };
 
 Centro::Centro() : Inclinacion_Politica("Centro", 0, 0)
@@ -33,4 +34,9 @@ int Centro::evaluar(char respuesta1, char respuesta2, char respuesta3, char resp
 	}
 
 	return puntaje;
+}
+
+string Centro::descripcion()
+{
+	return "Busca equilibrio entre posturas opuestas. Se apoya en la mentalidad abierta, el dialogo y las soluciones moderadas.";
 }

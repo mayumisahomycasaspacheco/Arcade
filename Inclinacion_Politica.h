@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Inclinacion_Politica
@@ -12,6 +13,7 @@ public:
 	Inclinacion_Politica(string pnombre, int ppuntaje, int pcantidad);
 	virtual ~Inclinacion_Politica();
 	virtual int evaluar(char respuesta1, char respuesta2, char respuesta3, char repsuesta4) = 0;
+	virtual string descripcion() = 0;
 
 	string getnombre();
 	int getpuntaje();

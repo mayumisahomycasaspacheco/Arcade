@@ -11,6 +11,7 @@ public:
 	~Derecha_Conservadora();
 
 	int evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4);
+	string descripcion();
 };
 
 Derecha_Conservadora::Derecha_Conservadora() : Inclinacion_Politica("Derecha Conservadora", 0, 0)
@@ -39,4 +40,9 @@ int Derecha_Conservadora::evaluar(char respuesta1, char respuesta2, char respuie
 
 	return puntaje;
 
+}
+
+string Derecha_Conservadora::descripcion()
+{
+	return "Valora la tradicion, el orden y el rol de los valores en la vida publica. Suele apoyar que el Estado actue segun principios morales.";
 }

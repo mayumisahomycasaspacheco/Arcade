@@ -12,6 +12,7 @@ public:
 	~Derecha_Liberal();
 
 	int evaluar(char respuesta1, char respuesta2, char respuesta3, char respuesta4);
+	string descripcion();
 };
 
 Derecha_Liberal::Derecha_Liberal() : Inclinacion_Politica("Derecha Liberal", 0, 0)
@@ -39,4 +40,9 @@ int Derecha_Liberal::evaluar(char respuesta1, char respuesta2, char respuesta3, 
 	}
 
 	return puntaje;
+}
+
+string Derecha_Liberal::descripcion()
+{
+	return "Defiende la libertad individual y de mercado. Prefiere un Estado que no financie religiones, aunque acepta que gobierne con valores.";
 }

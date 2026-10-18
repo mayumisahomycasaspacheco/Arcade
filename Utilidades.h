@@ -148,5 +148,95 @@ inline double leer_decimal_positivo(const string& mensaje)
 
 inline bool leer_confirmacion(const string& mensaje)
 {
+	while (true)
+	{
+		string texto = a_mayusculas(leer_linea(mensaje));
 
+		if (texto == "S" || texto == "SI")
+		{
+			return true;
+		}
+
+		if (texto == "N" || texto == "NO")
+		{
+			return false;
+		}
+
+		mostrar_error("Responde S o N.");
+	}
+}
+
+inline char leer_respuesta_sn_x(const string& mensaje)
+{
+	while (true)
+	{
+		string texto = a_mayusculas(leer_linea(mensaje));
+
+		if (texto == "S" || texto == "SI")
+		{
+			return 'S';
+		}
+
+		if (texto == "N" || texto == "NO")
+		{
+			return 'N';
+		}
+
+		if (texto == "X")
+		{
+			return 'X';
+		}
+
+		mostrar_error("Responde S (si), N (no) o X (no sabe).");
+	}
+}
+
+inline string leer_texto_no_vacio(const string & mensaje)
+{
+	while (true)
+	{
+		string texto = leer_linea(mensaje);
+
+		if (!texto.empty())
+		{
+			return texto;
+		}
+
+		mostrar_error("Este campo no puede estar vacio.");
+	}
+}
+
+inline string leer_correo(const string& mensaje)
+{
+	while (true)
+	{
+		string texto = leer_linea(mensaje);
+		size_t arroba = texto.find('@');
+
+		if (arroba != string::npos && arroba > 0 && texto.find(' ') == string::npos && texto.find('.', arroba) != string::npos && texto[texto.size() - 1] != '.')
+		{
+			return texto;
+		}
+
+		mostrar_error("Ingresa un correo valido (ejemplo: nombre@correo.com).");
+	}
+}
+
+inline void pausar()
+{
+	cout << endl << C_GRIS << "Presiona ENTER para continuar..." << C_RESET;
+	string basura;
+	getline(cin, basura);
+}
+
+inline string repetir(const string& texto, int veces)
+{
+	string resultado = "";
+
+	for (int i = 0; i < veces; i++)
+	{
+		resultado += texto;
+	}
+
+	return resultado;
 }

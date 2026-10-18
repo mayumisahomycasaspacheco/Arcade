@@ -136,6 +136,7 @@
     <ClInclude Include="Suscripcion_Gaming.h" />
     <ClInclude Include="Suscripcion_Musica.h" />
     <ClInclude Include="Suscripcion_Video.h" />
+    <ClInclude Include="Utilidades.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />

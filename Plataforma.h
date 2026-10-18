@@ -23,6 +23,8 @@ private:
 	bool fecha_valida(int pdia, int pmes, int panio);
 	double ingresos_totales();
 	int nivel_para(double ptotal);
+	double umbral_nivel(int pnivel);
+	string nombre_nivel(int pnivel);
 public:
 	Plataforma();
 	~Plataforma();
@@ -32,6 +34,9 @@ public:
 	void listar_todo();
 	void buscar_por_id(int pid_busqueda);
 	void reporte_por_tipo();
+	void panel_imperio();
+	void eliminar_suscripcion();
+	void cargar_demo();
 };
 
 Plataforma::Plataforma()

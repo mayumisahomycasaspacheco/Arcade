@@ -16,7 +16,7 @@ const string C_ROJO = "\033[91m";
 const string C_VERDE = "\033[92m";
 const string C_AMARILLO = "\033[93m";
 const string C_AZUL = "\033[94m";
-const string C_MAGNETA = "\033[95m";
+const string C_MAGENTA = "\033[95m";
 const string C_CIAN = "\033[96m";
 const string C_GRIS = "\033[90m";
 
@@ -239,4 +239,70 @@ inline string repetir(const string& texto, int veces)
 	}
 
 	return resultado;
+}
+
+inline void titulo(const string& texto, const string& color)
+{
+	int ancho = 54;
+	int espacios = ancho - 2 - (int)texto.size();
+
+	if (espacios < 0)
+	{
+		espacios = 0;
+	}
+
+	int izquierda = espacios / 2;
+	int derecha = espacios - izquierda;
+
+	cout << color << "+" << repetir("=", ancho - 2) << "+" << endl;
+	cout << " | " << repetir(" ", izquierda) << C_NEGRITA << texto << C_RESET << color << repetir(" ", derecha) << " | " << endl;
+	cout << "+" << repetir("=", ancho - 2) << "+" << C_RESET << endl;
+}
+
+inline void separador()
+{
+	cout << C_GRIS << repetir("-", 54) << C_RESET << endl;
+}
+
+inline string barra(int valor, int maximo, int ancho)
+{
+	int llenos = 0;
+
+	if (maximo > 0)
+	{
+		llenos = valor * ancho / maximo;
+
+	}
+
+	if (llenos < 0)
+	{
+		llenos = 0;
+	}
+
+	if (llenos > ancho)
+	{
+		llenos = ancho;
+	}
+
+	return "[" + repetir("#", llenos) + repetir("-", ancho - llenos) + "]";
+}
+
+inline void escribir_lento(const string& texto, int milisegundos)
+{
+	for (size_t i = 0; i < texto.size(); i++)
+	{
+		cout << texto[i] << flush;
+		esperar(milisegundos);
+	}
+}
+
+inline void mostrar_banner()
+{
+	cout << C_MAGENTA << R"ART(
+    _    ____   ____    _    ____  _____
+   / \  |  _ \ / ___|  / \  |  _ \| ____|
+  / _ \ | |_) | |     / _ \ | | | |  _|
+ / ___ \|  _ <| |___ / ___ \| |_| | |___
+/_/   \_\_| \_\\____/_/   \_\____/|_____|
+)ART" << C_RESET;
 }

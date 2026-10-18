@@ -3,11 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\YUYU\\Desktop\\Arcade\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Utilidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Utilidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\YUYU\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|C:\\Users\\YUYU\\Desktop\\Arcade\\Robot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{57C3F8F8-AD8E-0F11-33DC-AAD6BD2371A8}|Arcade.vcxproj|solutionrelative:Robot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,49 +23,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Utilidades.h",
-              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Utilidades.h",
-              "RelativeDocumentMoniker": "Utilidades.h",
-              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Utilidades.h",
-              "RelativeToolTip": "Utilidades.h",
-              "ViewState": "AgIAANAAAAAAAAAAAAAAAPAAAAASAAAAAAAAAA==",
+              "Title": "Robot.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Arcade\\Robot.h",
+              "RelativeDocumentMoniker": "Robot.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Robot.h",
+              "RelativeToolTip": "Robot.h",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAMYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-10-17T23:27:20.831Z",
+              "WhenOpened": "2026-10-18T05:43:30.829Z",
               "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "bb2ba096-feb8-4417-86b4-1b63cc239a9c",
-        "Display": 0,
-        "X": -30,
-        "Y": 78,
-        "Width": 1520,
-        "Height": 741,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Utilidades.h",
-              "DocumentMoniker": "C:\\Users\\YUYU\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h",
-              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h",
-              "ToolTip": "C:\\Users\\YUYU\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h [Solo lectura]",
-              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h [Solo lectura]",
-              "ViewState": "AgIAAAQBAAAAAAAAAAAAAPsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-10-17T23:26:16.684Z",
-              "EditorCaption": " [Solo lectura]"
             }
           ]
         }

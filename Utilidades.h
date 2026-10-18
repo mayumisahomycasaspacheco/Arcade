@@ -6,10 +6,17 @@
 #include <cctype>
 #include <thread>
 #include <chrono>
+
+#ifdef _WIN32
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
 #include <windows.h>
+#endif
 
 using namespace std;
 
+// ===================== COLORES (ANSI) =====================
 const string C_RESET = "\033[0m";
 const string C_NEGRITA = "\033[1m";
 const string C_ROJO = "\033[91m";
@@ -20,24 +27,40 @@ const string C_MAGENTA = "\033[95m";
 const string C_CIAN = "\033[96m";
 const string C_GRIS = "\033[90m";
 
+// ===================== CONSOLA =====================
+
+// Activa los colores en la consola de Windows y deja los decimales con 2 digitos
 inline void iniciar_consola()
 {
+#ifdef _WIN32
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	DWORD modo = 0;
-	GetConsoleMode(h, &modo);
-	SetConsoleMode(h, modo | 0x0004);
+
+	if (h != INVALID_HANDLE_VALUE && GetConsoleMode(h, &modo))
+	{
+		SetConsoleMode(h, modo | 0x0004); // ENABLE_VIRTUAL_TERMINAL_PROCESSING
+	}
+#endif
 	cout << fixed << setprecision(2);
 }
 
 inline void limpiar_pantalla()
 {
+#ifdef _WIN32
 	system("cls");
+#else
+	cout << "\033[2J\033[H";
+#endif
 }
 
 inline void esperar(int milisegundos)
 {
 	this_thread::sleep_for(chrono::milliseconds(milisegundos));
 }
+
+// ===================== LECTURA SEGURA =====================
+// Todo se lee por lineas completas: asi nunca quedan "\n" sueltos en el buffer
+// y el programa no se cuelga si el usuario escribe letras donde van numeros.
 
 inline string recortar(const string& texto)
 {
@@ -75,7 +98,8 @@ inline string leer_linea(const string& mensaje)
 
 	if (!getline(cin, linea))
 	{
-		cout << " " << endl;
+		// Se cerro la entrada (Ctrl+Z / Ctrl+D): salimos sin quedar en un bucle infinito
+		cout << endl;
 		exit(0);
 	}
 
@@ -84,7 +108,7 @@ inline string leer_linea(const string& mensaje)
 
 inline void mostrar_error(const string& mensaje)
 {
-	cout << C_ROJO << " [!] " << mensaje << C_RESET << endl;
+	cout << C_ROJO << "  [!] " << mensaje << C_RESET << endl;
 }
 
 inline int leer_entero_rango(const string& mensaje, int minimo, int maximo)
@@ -113,7 +137,7 @@ inline int leer_entero_rango(const string& mensaje, int minimo, int maximo)
 			}
 		}
 
-		mostrar_error("Ingresa un numero entero entre " + to_string(minimo) + " y " + to_string(maximo) + ".");
+		mostrar_error("Enter a whole number between " + to_string(minimo) + " and " + to_string(maximo) + ".");
 	}
 }
 
@@ -142,7 +166,7 @@ inline double leer_decimal_positivo(const string& mensaje)
 			}
 		}
 
-		mostrar_error("Ingresa un numero valido (mayor o igual a 0).");
+		mostrar_error("Enter a valid number (0 or greater).");
 	}
 }
 
@@ -152,7 +176,7 @@ inline bool leer_confirmacion(const string& mensaje)
 	{
 		string texto = a_mayusculas(leer_linea(mensaje));
 
-		if (texto == "S" || texto == "SI")
+		if (texto == "Y" || texto == "YES")
 		{
 			return true;
 		}
@@ -162,19 +186,20 @@ inline bool leer_confirmacion(const string& mensaje)
 			return false;
 		}
 
-		mostrar_error("Responde S o N.");
+		mostrar_error("Answer Y or N.");
 	}
 }
 
+// Devuelve 'S', 'N' o 'X' (no sabe)
 inline char leer_respuesta_sn_x(const string& mensaje)
 {
 	while (true)
 	{
 		string texto = a_mayusculas(leer_linea(mensaje));
 
-		if (texto == "S" || texto == "SI")
+		if (texto == "Y" || texto == "YES")
 		{
-			return 'S';
+			return 'Y';
 		}
 
 		if (texto == "N" || texto == "NO")
@@ -187,11 +212,11 @@ inline char leer_respuesta_sn_x(const string& mensaje)
 			return 'X';
 		}
 
-		mostrar_error("Responde S (si), N (no) o X (no sabe).");
+		mostrar_error("Answer Y (yes), N (no) or X (don't know).");
 	}
 }
 
-inline string leer_texto_no_vacio(const string & mensaje)
+inline string leer_texto_no_vacio(const string& mensaje)
 {
 	while (true)
 	{
@@ -202,7 +227,7 @@ inline string leer_texto_no_vacio(const string & mensaje)
 			return texto;
 		}
 
-		mostrar_error("Este campo no puede estar vacio.");
+		mostrar_error("This field cannot be empty.");
 	}
 }
 
@@ -213,21 +238,24 @@ inline string leer_correo(const string& mensaje)
 		string texto = leer_linea(mensaje);
 		size_t arroba = texto.find('@');
 
-		if (arroba != string::npos && arroba > 0 && texto.find(' ') == string::npos && texto.find('.', arroba) != string::npos && texto[texto.size() - 1] != '.')
+		if (arroba != string::npos && arroba > 0 && texto.find(' ') == string::npos
+			&& texto.find('.', arroba) != string::npos && texto[texto.size() - 1] != '.')
 		{
 			return texto;
 		}
 
-		mostrar_error("Ingresa un correo valido (ejemplo: nombre@correo.com).");
+		mostrar_error("Enter a valid email (example: name@mail.com).");
 	}
 }
 
 inline void pausar()
 {
-	cout << endl << C_GRIS << "Presiona ENTER para continuar..." << C_RESET;
+	cout << endl << C_GRIS << "Press ENTER to continue..." << C_RESET;
 	string basura;
 	getline(cin, basura);
 }
+
+// ===================== DECORACION =====================
 
 inline string repetir(const string& texto, int veces)
 {
@@ -241,6 +269,7 @@ inline string repetir(const string& texto, int veces)
 	return resultado;
 }
 
+// Caja con titulo centrado
 inline void titulo(const string& texto, const string& color)
 {
 	int ancho = 54;
@@ -255,7 +284,7 @@ inline void titulo(const string& texto, const string& color)
 	int derecha = espacios - izquierda;
 
 	cout << color << "+" << repetir("=", ancho - 2) << "+" << endl;
-	cout << " | " << repetir(" ", izquierda) << C_NEGRITA << texto << C_RESET << color << repetir(" ", derecha) << " | " << endl;
+	cout << "|" << repetir(" ", izquierda) << C_NEGRITA << texto << C_RESET << color << repetir(" ", derecha) << "|" << endl;
 	cout << "+" << repetir("=", ancho - 2) << "+" << C_RESET << endl;
 }
 
@@ -264,6 +293,7 @@ inline void separador()
 	cout << C_GRIS << repetir("-", 54) << C_RESET << endl;
 }
 
+// Barra de progreso: [#####-----]
 inline string barra(int valor, int maximo, int ancho)
 {
 	int llenos = 0;
@@ -271,7 +301,6 @@ inline string barra(int valor, int maximo, int ancho)
 	if (maximo > 0)
 	{
 		llenos = valor * ancho / maximo;
-
 	}
 
 	if (llenos < 0)
@@ -287,6 +316,7 @@ inline string barra(int valor, int maximo, int ancho)
 	return "[" + repetir("#", llenos) + repetir("-", ancho - llenos) + "]";
 }
 
+// Efecto maquina de escribir
 inline void escribir_lento(const string& texto, int milisegundos)
 {
 	for (size_t i = 0; i < texto.size(); i++)

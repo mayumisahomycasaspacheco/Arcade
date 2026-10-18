@@ -14,7 +14,7 @@ public:
 	string descripcion();
 };
 
-Izquierda_Conservadora::Izquierda_Conservadora() : Inclinacion_Politica("Izquierda Conservadora", 0, 0)
+Izquierda_Conservadora::Izquierda_Conservadora() : Inclinacion_Politica("Conservative Left", 0, 0)
 {
 	//Ya se tienen los datos
 }
@@ -44,5 +44,5 @@ int Izquierda_Conservadora::evaluar(char respuesta1, char respuesta2, char respu
 
 string Izquierda_Conservadora::descripcion()
 {
-	return "Une la busqueda de igualdad social con posturas culturales tradicionales. Desconfia de mezclar Estado, religion y valores impuestos.";
+	return "Combines the pursuit of social equality with traditional cultural positions. Distrusts mixing State, religion and imposed values.";
 }

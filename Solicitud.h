@@ -89,4 +89,4 @@ void Solicitud::setrespuesta4(char prespuesta4)
 void Solicitud::setresultado(string presultado)
 {
 	resultado = presultado;
-}
+}

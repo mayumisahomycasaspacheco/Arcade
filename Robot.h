@@ -87,49 +87,49 @@ void Robot::agregar_solicitud(Solicitud* psolicitud)
 void Robot::mostrar_instrucciones()
 {
 	limpiar_pantalla();
-	titulo("COMO FUNCIONA: ROBOT POLITICO", C_CIAN);
+	titulo("HOW IT WORKS: POLITICAL ROBOT", C_CIAN);
 	cout << endl;
-	cout << " El Robot Politico te hace 4 preguntas rapidas y adivina" << endl;
-	cout << " con que inclinacion politica coincides mas." << endl << endl;
-	cout << C_AMARILLO << " Como se responde:" << C_RESET << endl;
-	cout << "   S = Si    N = No    X = No sabe" << endl << endl;
-	cout << C_AMARILLO << " Que pasa despues:" << C_RESET << endl;
-	cout << "   - Cada postura suma puntos a una o mas inclinaciones." << endl;
-	cout << "   - Gana la que tenga mas puntos. Si hay empate, tendras" << endl;
-	cout << "     un perfil mixto (esta permitido!)." << endl;
-	cout << "   - Si respondes X a todo, el robot no podra decidir." << endl << endl;
+	cout << " The Political Robot asks you 4 quick questions and guesses" << endl;
+	cout << " which political leaning you match the most." << endl << endl;
+	cout << C_AMARILLO << " How to answer:" << C_RESET << endl;
+	cout << "   Y = Yes    N = No    X = Don't know" << endl << endl;
+	cout << C_AMARILLO << " What happens next:" << C_RESET << endl;
+	cout << "   - Each stance adds points to one or more leanings." << endl;
+	cout << "   - The one with the most points wins. If there is a tie, you'll" << endl;
+	cout << "     have a mixed profile (that's allowed!)." << endl;
+	cout << "   - If you answer X to everything, the robot can't decide." << endl << endl;
 	cout << C_AMARILLO << " Extras:" << C_RESET << endl;
-	cout << "   - Reporte total: ranking de todas las personas atendidas." << endl;
-	cout << "   - Historial: las respuestas y el resultado de cada test." << endl << endl;
-	cout << C_GRIS << " Nota: es un juego de 4 preguntas, no un estudio cientifico." << C_RESET << endl;
+	cout << "   - Full report: ranking of everyone who took the test." << endl;
+	cout << "   - History: the answers and result of each test." << endl << endl;
+	cout << C_GRIS << " Note: this is a 4-question game, not a scientific study." << C_RESET << endl;
 }
 
 void Robot::ingresar_datos()
 {
 	string preguntas[4] = {
-		"El estado debe financiar la iglesia?",
-		"El estado actua con valores a la hora de gobernar?",
-		"El estado tiene en cuenta a todas las iglesias?",
-		"Usted tiene la mentalidad abierta?"
+		"Should the state fund the church?",
+		"Does the state act on values when governing?",
+		"Does the state take all churches into account?",
+		"Are you open-minded?"
 	};
 	char respuesta[4];
 
 	limpiar_pantalla();
-	titulo("ROBOT POLITICO", C_CIAN);
+	titulo("POLITICAL ROBOT", C_CIAN);
 
 	cout << C_CIAN << R"ART(
       ,-------.
-     | [o] [o] |    Bip bop! Soy el Robot Politico.
-     |  \___/  |    Voy a leer tu mente... o casi.
+     | [o] [o] |    Beep boop! I'm the Political Robot.
+     |  \___/  |    I'm going to read your mind... or almost.
       '-------'
        /|   |\
 )ART" << C_RESET << endl;
 
-	cout << C_GRIS << "  Responde: S = Si | N = No | X = No sabe" << C_RESET << endl << endl;
+	cout << C_GRIS << "  Answer: Y = Yes | N = No | X = Don't know" << C_RESET << endl << endl;
 
 	for (int i = 0; i < 4; i++)
 	{
-		cout << C_AMARILLO << "  Pregunta " << (i + 1) << "/4  " << C_RESET << barra(i, 4, 12) << endl;
+		cout << C_AMARILLO << "  Question " << (i + 1) << "/4  " << C_RESET << barra(i, 4, 12) << endl;
 		cout << "  " << preguntas[i] << endl;
 		respuesta[i] = leer_respuesta_sn_x("  > ");
 		cout << endl;
@@ -140,7 +140,7 @@ void Robot::ingresar_datos()
 	char respuesta3 = respuesta[2];
 	char respuesta4 = respuesta[3];
 
-	cout << C_CIAN << "  Analizando tus respuestas" << C_RESET << flush;
+	cout << C_CIAN << "  Analyzing your answers" << C_RESET << flush;
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -165,14 +165,14 @@ void Robot::ingresar_datos()
 
 	string resultado = "";
 
-	titulo("RESULTADO", C_VERDE);
+	titulo("RESULT", C_VERDE);
 	cout << endl;
 
 	if (puntaje_mayor == 0)
 	{
-		cout << C_AMARILLO << "  No se pudo determinar tu inclinacion politica." << C_RESET << endl;
-		cout << "  Con tantas dudas el robot no tiene de donde agarrarse. Intenta otra vez!" << endl;
-		resultado = "Sin determinar";
+		cout << C_AMARILLO << "  Your political leaning could not be determined." << C_RESET << endl;
+		cout << "  With so many doubts the robot has nothing to work with. Try again!" << endl;
+		resultado = "Undetermined";
 	}
 	else
 	{
@@ -188,15 +188,15 @@ void Robot::ingresar_datos()
 
 		if (ganadoras == 1)
 		{
-			escribir_lento("  Tu inclinacion politica es...", 25);
+			escribir_lento("  Your political leaning is...", 25);
 			esperar(500);
 			cout << endl << endl;
 		}
 		else
 		{
-			escribir_lento("  Perfil mixto! Coincides por igual con...", 25);
+			escribir_lento("  Mixed profile! You match equally with...", 25);
 			esperar(500);
-			cout << " " << endl;
+			cout << endl << endl;
 		}
 
 		for (int i = 0; i < 5; i++)
@@ -219,7 +219,7 @@ void Robot::ingresar_datos()
 
 	cout << endl;
 	separador();
-	cout << C_GRIS << "  Puntos obtenidos por inclinacion:" << C_RESET << endl;
+	cout << C_GRIS << "  Points earned per leaning:" << C_RESET << endl;
 
 	for (int i = 0; i < 5; i++)
 	{
@@ -229,18 +229,92 @@ void Robot::ingresar_datos()
 	Solicitud* psolicitud = new Solicitud(respuesta1, respuesta2, respuesta3, respuesta4, resultado);
 	agregar_solicitud(psolicitud);
 
-	cout << endl << C_GRIS << "  Test #" << encuestados << " guardado en el historial." << C_RESET << endl;
+	cout << endl << C_GRIS << "  Test #" << encuestados << " saved to the history." << C_RESET << endl;
 }
 
 void Robot::reporte()
 {
-	cout << "ROBOT POLÍTICO" << endl;
-	cout << "REPORTE TOTAL: " << endl;
+	limpiar_pantalla();
+	titulo("FULL REPORT", C_CIAN);
+	cout << endl;
+
+	if (encuestados == 0)
+	{
+		cout << "  No data yet. Take the test at least once!" << endl;
+		return;
+	}
+
+	int maximo = 0;
 
 	for (int i = 0; i < 5; i++)
 	{
-		cout << inclinacion[i]->getnombre() << ":" << inclinacion[i]->getcantidad() << " encuestados" << endl;
+		if (inclinacion[i]->getcantidad() > maximo)
+		{
+			maximo = inclinacion[i]->getcantidad();
+		}
 	}
 
-	cout << "Total de personas atendidas: " << encuestados << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		int cantidad = inclinacion[i]->getcantidad();
+		int porcentaje = cantidad * 100 / encuestados;
+
+		cout << "  " << left << setw(24) << inclinacion[i]->getnombre();
+
+		if (cantidad == maximo && maximo > 0)
+		{
+			cout << C_AMARILLO;
+		}
+
+		cout << barra(cantidad, encuestados, 15) << C_RESET << " " << cantidad << " (" << porcentaje << "%)" << endl;
+	}
+
+	cout << endl;
+
+	if (maximo > 0)
+	{
+		cout << C_VERDE << "  Dominant trend: " << C_RESET;
+		bool primera = true;
+
+		for (int i = 0; i < 5; i++)
+		{
+			if (inclinacion[i]->getcantidad() == maximo)
+			{
+				if (!primera)
+				{
+					cout << " / ";
+				}
+
+				cout << inclinacion[i]->getnombre();
+				primera = false;
+			}
+		}
+
+		cout << endl;
+	}
+
+	cout << "  Total people attended: " << encuestados << endl;
+	cout << C_GRIS << "  (If there were ties, one person counts toward several leanings.)" << C_RESET << endl;
+}
+
+void Robot::historial()
+{
+	limpiar_pantalla();
+	titulo("TEST HISTORY", C_CIAN);
+	cout << endl;
+
+	if (encuestados == 0)
+	{
+		cout << "  No tests recorded yet." << endl;
+		return;
+	}
+
+	for (int i = 0; i < encuestados; i++)
+	{
+		cout << C_AMARILLO << "  #" << (i + 1) << C_RESET << "  Answers: "
+			<< solicitud[i]->getrespuesta1() << " "
+			<< solicitud[i]->getrespuesta2() << " "
+			<< solicitud[i]->getrespuesta3() << " "
+			<< solicitud[i]->getrespuesta4() << "  ->  " << solicitud[i]->getresultado() << endl;
+	}
 }

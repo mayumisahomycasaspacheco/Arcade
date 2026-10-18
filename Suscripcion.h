@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <string>
+#include "Utilidades.h"
 using namespace std;
 
 class Suscripcion
@@ -123,6 +125,6 @@ void Suscripcion::setcorreo(string pcorreo)
 
 void Suscripcion::mostrar_detalles()
 {
-	cout << "ID: " << id << " | Usuario: " << usuario << " | Fecha: " << dia << "/" << mes << "/" << anio << endl;
-	cout << "Correo: " << correo << " | Tarifa Base: S/ " << tarifa_base << endl;
+	cout << C_AMARILLO << "ID: " << id << C_RESET << " | User: " << usuario << " | Date: " << dia << "/" << mes << "/" << anio << endl;
+	cout << "Email: " << correo << " | Base Fee: S/ " << tarifa_base << endl;
 }

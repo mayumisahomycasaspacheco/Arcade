@@ -14,7 +14,7 @@ public:
 	string descripcion();
 };
 
-Izquierda_Liberal::Izquierda_Liberal() : Inclinacion_Politica("Izquierda Liberal", 0, 0)
+Izquierda_Liberal::Izquierda_Liberal() : Inclinacion_Politica("Liberal Left", 0, 0)
 {
 	//Ya se tienen los datos
 }
@@ -33,7 +33,7 @@ int Izquierda_Liberal::evaluar(char respuesta1, char respuesta2, char respuesta3
 		puntaje = puntaje + 1;
 	}
 
-	if (respuesta3 == 'S')
+	if (respuesta3 == 'Y')
 	{
 		puntaje = puntaje + 1;
 	}
@@ -43,5 +43,5 @@ int Izquierda_Liberal::evaluar(char respuesta1, char respuesta2, char respuesta3
 
 string Izquierda_Liberal::descripcion()
 {
-	return "Combina justicia social con libertades individuales y respeto por la pluralidad: todas las creencias deben ser tenidas en cuenta.";
+	return "Combines social justice with individual freedoms and respect for pluralism: all beliefs should be taken into account.";
 }

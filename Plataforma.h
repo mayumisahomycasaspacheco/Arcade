@@ -138,7 +138,7 @@ void Plataforma::leer_fecha(int& pdia, int& pmes, int& panio)
 
 	while (!valida)
 	{
-		string texto = leer_linea("Fecha de inicio (dd mm aaaa): ");
+		string texto = leer_linea("Start date (dd mm yyyy): ");
 		istringstream entrada(texto);
 		string sobrante;
 
@@ -150,15 +150,17 @@ void Plataforma::leer_fecha(int& pdia, int& pmes, int& panio)
 			}
 			else
 			{
-				mostrar_error("Esa fecha no existe (revisa dia, mes y anio).");
+				mostrar_error("That date does not exist (check day, month and year).");
 			}
 		}
 		else
 		{
-			mostrar_error("Ingresa tres numeros separados por espacios (dd mm aaaa).");
+			mostrar_error("Enter three numbers separated by spaces (dd mm yyyy).");
 		}
 	}
 }
+
+// ===================== NIVELES (la parte "juego") =====================
 
 double Plataforma::umbral_nivel(int pnivel)
 {
@@ -168,7 +170,7 @@ double Plataforma::umbral_nivel(int pnivel)
 
 string Plataforma::nombre_nivel(int pnivel)
 {
-	string nombres[5] = { "Garage Startup", "Emprendedor", "Plataforma en Crecimiento", "Gigante del Streaming", "Imperio Digital" };
+	string nombres[5] = { "Garage Startup", "Entrepreneur", "Growing Platform", "Streaming Giant", "Digital Empire" };
 	return nombres[pnivel];
 }
 
@@ -202,9 +204,9 @@ void Plataforma::mostrar_estado()
 	double total = ingresos_totales();
 	int nivel = nivel_para(total);
 
-	cout << " Suscripciones: " << C_AMARILLO << cantidad << C_RESET
-		<< "  |  Ingresos: " << C_VERDE << "S/ " << total << C_RESET << endl;
-	cout << " Nivel " << (nivel + 1) << ": " << C_NEGRITA << nombre_nivel(nivel) << C_RESET << endl;
+	cout << " Subscriptions: " << C_AMARILLO << cantidad << C_RESET
+		<< "  |  Income: " << C_VERDE << "S/ " << total << C_RESET << endl;
+	cout << " Level " << (nivel + 1) << ": " << C_NEGRITA << nombre_nivel(nivel) << C_RESET << endl;
 
 	if (nivel < 4)
 	{
@@ -212,118 +214,120 @@ void Plataforma::mostrar_estado()
 		double hasta = umbral_nivel(nivel + 1);
 
 		cout << " " << barra((int)(total - desde), (int)(hasta - desde), 20)
-			<< C_GRIS << " siguiente nivel en S/ " << hasta << C_RESET << endl;
+			<< C_GRIS << " next level at S/ " << hasta << C_RESET << endl;
 	}
 	else
 	{
-		cout << " " << C_AMARILLO << "NIVEL MAXIMO ALCANZADO!" << C_RESET << endl;
+		cout << " " << C_AMARILLO << "MAX LEVEL REACHED!" << C_RESET << endl;
 	}
 }
 
 void Plataforma::mostrar_instrucciones()
 {
 	limpiar_pantalla();
-	titulo("COMO FUNCIONA: SIMULADOR DE STREAMING", C_CIAN);
+	titulo("HOW IT WORKS: STREAMING SIMULATOR", C_CIAN);
 	cout << endl;
-	cout << " Eres el dueno de una plataforma de streaming. Registra" << endl;
-	cout << " suscripciones de Video, Musica y Gaming. Cada una paga un" << endl;
-	cout << " importe distinto segun lo que contrate." << endl << endl;
-	cout << C_AMARILLO << " Tu meta:" << C_RESET << " subir tus ingresos mensuales para ascender:" << endl;
+	cout << " You own a streaming platform. Register" << endl;
+	cout << " Video, Music and Gaming subscriptions. Each one pays a" << endl;
+	cout << " different amount depending on what it includes." << endl << endl;
+	cout << C_AMARILLO << " Your goal:" << C_RESET << " raise your monthly income to rank up:" << endl;
 
 	for (int i = 0; i < 5; i++)
 	{
-		cout << "   Nivel " << (i + 1) << "  " << left << setw(28) << nombre_nivel(i) << "desde S/ " << umbral_nivel(i) << endl;
+		cout << "   Level " << (i + 1) << "  " << left << setw(28) << nombre_nivel(i) << "from S/ " << umbral_nivel(i) << endl;
 	}
 
-	cout << endl << C_AMARILLO << " Como se calcula el importe (sobre la tarifa base):" << C_RESET << endl;
-	cout << C_AZUL << "   Video:  " << C_RESET << "+10 si es 4K | +2 por cada pantalla extra | +3 premium" << endl;
-	cout << C_MAGENTA << "   Musica: " << C_RESET << "+3 calidad Alta | +6 HiFi | +4 modo offline" << endl;
-	cout << C_VERDE << "   Gaming: " << C_RESET << "+5 acceso beta | +0.10 por cada GB de nube" << endl << endl;
-	cout << C_AMARILLO << " Herramientas:" << C_RESET << " listar, buscar por ID, reporte por tipo," << endl;
-	cout << " panel del imperio (estadisticas), cancelar suscripciones" << endl;
-	cout << " y cargar datos de ejemplo para probar rapido." << endl;
+	cout << endl << C_AMARILLO << " How the amount is calculated (on top of the base fee):" << C_RESET << endl;
+	cout << C_AZUL << "   Video:  " << C_RESET << "+10 if 4K | +2 per extra screen | +3 premium" << endl;
+	cout << C_MAGENTA << "   Music:  " << C_RESET << "+3 High quality | +6 HiFi | +4 offline mode" << endl;
+	cout << C_VERDE << "   Gaming: " << C_RESET << "+5 beta access | +0.10 per cloud GB" << endl << endl;
+	cout << C_AMARILLO << " Tools:" << C_RESET << " list, search by ID, report by type," << endl;
+	cout << " empire dashboard (statistics), cancel subscriptions" << endl;
+	cout << " and load sample data to test quickly." << endl;
 }
+
+// ===================== OPERACIONES =====================
 
 void Plataforma::agregar_suscripcion()
 {
-	titulo("NUEVA SUSCRIPCION", C_CIAN);
+	titulo("NEW SUBSCRIPTION", C_CIAN);
 	cout << endl;
 
-	int tipo = leer_entero("Tipo de Suscripcion: [1] Video [2] Musica [3] Gaming: ", 1, 3);
+	int tipo = leer_entero("Subscription type: [1] Video [2] Music [3] Gaming: ", 1, 3);
 	int id = leer_entero("ID: ", 1, 2147483647);
 
 	if (existe_id(id))
 	{
-		mostrar_error("Ya existe una suscripcion con ese ID.");
+		mostrar_error("A subscription with that ID already exists.");
 		return;
 	}
 
-	string usuario = leer_texto_no_vacio("Usuario: ");
-	string correo = leer_correo("Correo: ");
+	string usuario = leer_texto_no_vacio("User: ");
+	string correo = leer_correo("Email: ");
 	int dia;
 	int mes;
 	int anio;
 	leer_fecha(dia, mes, anio);
-	double tarifa = leer_decimal("Tarifa Base (S/): ");
+	double tarifa = leer_decimal("Base fee (S/): ");
 
 	double total_antes = ingresos_totales();
 	int nivel_antes = nivel_para(total_antes);
 
 	if (tipo == 1)
 	{
-		int opcion_resolucion = leer_entero("Resolucion: [1] HD [2] 4K: ", 1, 2);
+		int opcion_resolucion = leer_entero("Resolution: [1] HD [2] 4K: ", 1, 2);
 		string resolucion = (opcion_resolucion == 1) ? "HD" : "4K";
-		int pantallas = leer_entero("Numero de Pantallas (1-10): ", 1, 10);
-		bool premium = leer_si_no("Premium (S/N): ");
+		int pantallas = leer_entero("Number of screens (1-10): ", 1, 10);
+		bool premium = leer_si_no("Premium (Y/N): ");
 		agregar_a_lista(new Suscripcion_Video(id, dia, mes, anio, tarifa, usuario, correo, resolucion, pantallas, premium));
 	}
 
 	else if (tipo == 2)
 	{
-		int opcion_calidad = leer_entero("Calidad de Audio: [1] Estandar [2] Alta [3] HiFi: ", 1, 3);
-		string calidad = "Estandar";
+		int opcion_calidad = leer_entero("Audio quality: [1] Standard [2] High [3] HiFi: ", 1, 3);
+		string calidad = "Standard";
 
 		if (opcion_calidad == 2)
 		{
-			calidad = "Alta";
+			calidad = "High";
 		}
 		else if (opcion_calidad == 3)
 		{
 			calidad = "HiFi";
 		}
 
-		bool offline = leer_si_no("Modo Offline (S/N): ");
+		bool offline = leer_si_no("Offline mode (Y/N): ");
 		agregar_a_lista(new Suscripcion_Musica(id, dia, mes, anio, tarifa, usuario, correo, calidad, offline));
 	}
 
 	else
 	{
-		int opcion_plataforma = leer_entero("Plataforma: [1] PC [2] Consola: ", 1, 2);
-		string plataforma = (opcion_plataforma == 1) ? "PC" : "Consola";
-		bool beta = leer_si_no("Acceso Beta (S/N): ");
-		int nube = leer_entero("Almacenamiento Nube (GB, 0-10000): ", 0, 10000);
+		int opcion_plataforma = leer_entero("Platform: [1] PC [2] Console: ", 1, 2);
+		string plataforma = (opcion_plataforma == 1) ? "PC" : "Console";
+		bool beta = leer_si_no("Beta access (Y/N): ");
+		int nube = leer_entero("Cloud storage (GB, 0-10000): ", 0, 10000);
 		agregar_a_lista(new Suscripcion_Gaming(id, dia, mes, anio, tarifa, usuario, correo, plataforma, beta, nube));
 	}
 
-	cout << endl << C_VERDE << "Suscripcion registrada correctamente." << C_RESET << endl;
-	cout << "Importe mensual de esta suscripcion: " << C_AMARILLO << "S/ " << suscripcion[cantidad - 1]->calcular_importe() << C_RESET << endl;
+	cout << endl << C_VERDE << "Subscription registered successfully." << C_RESET << endl;
+	cout << "Monthly amount of this subscription: " << C_AMARILLO << "S/ " << suscripcion[cantidad - 1]->calcular_importe() << C_RESET << endl;
 
 	int nivel_despues = nivel_para(ingresos_totales());
 
 	if (nivel_despues > nivel_antes)
 	{
-		cout << endl << C_NEGRITA << C_AMARILLO << "  *** SUBISTE DE NIVEL! Ahora eres: " << nombre_nivel(nivel_despues) << " ***" << C_RESET << endl;
+		cout << endl << C_NEGRITA << C_AMARILLO << "  *** LEVEL UP! You are now: " << nombre_nivel(nivel_despues) << " ***" << C_RESET << endl;
 	}
 }
 
 void Plataforma::listar_todo()
 {
-	titulo("TODAS LAS SUSCRIPCIONES", C_CIAN);
+	titulo("ALL SUBSCRIPTIONS", C_CIAN);
 	cout << endl;
 
 	if (cantidad == 0)
 	{
-		cout << "No hay suscripciones registradas." << endl;
+		cout << "No subscriptions registered." << endl;
 		return;
 	}
 
@@ -346,12 +350,12 @@ void Plataforma::buscar_por_id(int pid_busqueda)
 		}
 	}
 
-	mostrar_error("ID no encontrado.");
+	mostrar_error("ID not found.");
 }
 
 void Plataforma::reporte_por_tipo()
 {
-	int tipo = leer_entero("Filtrar: [1] Video [2] Musica [3] Gaming: ", 1, 3);
+	int tipo = leer_entero("Filter: [1] Video [2] Music [3] Gaming: ", 1, 3);
 	string nombre;
 
 	if (tipo == 1)
@@ -361,7 +365,7 @@ void Plataforma::reporte_por_tipo()
 
 	else if (tipo == 2)
 	{
-		nombre = "MUSICA";
+		nombre = "MUSIC";
 	}
 
 	else
@@ -386,31 +390,31 @@ void Plataforma::reporte_por_tipo()
 
 	if (encontrados == 0)
 	{
-		cout << "No hay suscripciones de tipo " << nombre << "." << endl;
+		cout << "No subscriptions of type " << nombre << "." << endl;
 	}
 
 	else
 	{
-		cout << C_VERDE << "Total recaudado en " << nombre << ": S/ " << total << C_RESET
-			<< " (" << encontrados << " suscripciones)" << endl;
+		cout << C_VERDE << "Total collected in " << nombre << ": S/ " << total << C_RESET
+			<< " (" << encontrados << " subscriptions)" << endl;
 	}
 }
 
 void Plataforma::panel_imperio()
 {
-	titulo("PANEL DEL IMPERIO", C_CIAN);
+	titulo("EMPIRE DASHBOARD", C_CIAN);
 	cout << endl;
 
 	if (cantidad == 0)
 	{
-		cout << "Tu imperio esta vacio. Registra suscripciones o carga datos de ejemplo!" << endl;
+		cout << "Your empire is empty. Register subscriptions or load sample data!" << endl;
 		return;
 	}
 
 	mostrar_estado();
 	cout << endl;
 
-	string tipos[3] = { "VIDEO", "MUSICA", "GAMING" };
+	string tipos[3] = { "VIDEO", "MUSIC", "GAMING" };
 	string colores[3] = { C_AZUL, C_MAGENTA, C_VERDE };
 	double ingresos[3] = { 0, 0, 0 };
 	int cuantas[3] = { 0, 0, 0 };
@@ -434,7 +438,7 @@ void Plataforma::panel_imperio()
 		}
 	}
 
-	cout << C_AMARILLO << "Ingresos por servicio:" << C_RESET << endl;
+	cout << C_AMARILLO << "Income by service:" << C_RESET << endl;
 
 	for (int t = 0; t < 3; t++)
 	{
@@ -442,26 +446,26 @@ void Plataforma::panel_imperio()
 
 		cout << "  " << colores[t] << left << setw(8) << tipos[t] << C_RESET
 			<< barra(porcentaje, 100, 20) << " S/ " << ingresos[t]
-			<< " (" << cuantas[t] << " susc., " << porcentaje << "%)" << endl;
+			<< " (" << cuantas[t] << " subs., " << porcentaje << "%)" << endl;
 	}
 
-	cout << endl << C_AMARILLO << "Tu mejor cliente:" << C_RESET << endl;
+	cout << endl << C_AMARILLO << "Your best customer:" << C_RESET << endl;
 	suscripcion[mejor]->mostrar_detalles();
-	cout << endl << "Ingreso promedio por suscripcion: S/ " << (total / cantidad) << endl;
+	cout << endl << "Average income per subscription: S/ " << (total / cantidad) << endl;
 }
 
 void Plataforma::eliminar_suscripcion()
 {
-	titulo("CANCELAR SUSCRIPCION", C_CIAN);
+	titulo("CANCEL SUBSCRIPTION", C_CIAN);
 	cout << endl;
 
 	if (cantidad == 0)
 	{
-		cout << "No hay suscripciones registradas." << endl;
+		cout << "No subscriptions registered." << endl;
 		return;
 	}
 
-	int id = leer_entero("ID a cancelar: ", 1, 2147483647);
+	int id = leer_entero("ID to cancel: ", 1, 2147483647);
 	int posicion = -1;
 
 	for (int i = 0; i < cantidad; i++)
@@ -474,7 +478,7 @@ void Plataforma::eliminar_suscripcion()
 
 	if (posicion == -1)
 	{
-		mostrar_error("ID no encontrado.");
+		mostrar_error("ID not found.");
 		return;
 	}
 
@@ -482,9 +486,9 @@ void Plataforma::eliminar_suscripcion()
 	suscripcion[posicion]->mostrar_detalles();
 	cout << endl;
 
-	if (!leer_si_no("Seguro que quieres cancelarla? (S/N): "))
+	if (!leer_si_no("Are you sure you want to cancel it? (Y/N): "))
 	{
-		cout << "Operacion cancelada. La suscripcion sigue activa." << endl;
+		cout << "Operation cancelled. The subscription is still active." << endl;
 		return;
 	}
 
@@ -514,30 +518,30 @@ void Plataforma::eliminar_suscripcion()
 	}
 
 	cantidad--;
-	cout << C_ROJO << "Suscripcion cancelada." << C_RESET << endl;
+	cout << C_ROJO << "Subscription cancelled." << C_RESET << endl;
 }
 
 void Plataforma::cargar_demo()
 {
-	titulo("DATOS DE EJEMPLO", C_CIAN);
+	titulo("SAMPLE DATA", C_CIAN);
 	cout << endl;
 
 	int agregadas = 0;
 
-	if (!existe_id(101)) { agregar_a_lista(new Suscripcion_Video(101, 5, 1, 2026, 15.0, "ana_cine", "ana@correo.com", "4K", 3, true)); agregadas++; }
-	if (!existe_id(102)) { agregar_a_lista(new Suscripcion_Musica(102, 12, 2, 2026, 10.0, "beto_beats", "beto@correo.com", "HiFi", true)); agregadas++; }
-	if (!existe_id(103)) { agregar_a_lista(new Suscripcion_Gaming(103, 20, 3, 2026, 12.0, "caro_gamer", "caro@correo.com", "PC", true, 200)); agregadas++; }
-	if (!existe_id(104)) { agregar_a_lista(new Suscripcion_Video(104, 2, 4, 2026, 9.0, "diego_tv", "diego@correo.com", "HD", 1, false)); agregadas++; }
-	if (!existe_id(105)) { agregar_a_lista(new Suscripcion_Musica(105, 18, 5, 2026, 8.0, "eli_music", "eli@correo.com", "Estandar", false)); agregadas++; }
-	if (!existe_id(106)) { agregar_a_lista(new Suscripcion_Gaming(106, 9, 6, 2026, 11.0, "fer_play", "fer@correo.com", "Consola", false, 50)); agregadas++; }
+	if (!existe_id(101)) { agregar_a_lista(new Suscripcion_Video(101, 5, 1, 2026, 15.0, "ana_cine", "ana@mail.com", "4K", 3, true)); agregadas++; }
+	if (!existe_id(102)) { agregar_a_lista(new Suscripcion_Musica(102, 12, 2, 2026, 10.0, "beto_beats", "beto@mail.com", "HiFi", true)); agregadas++; }
+	if (!existe_id(103)) { agregar_a_lista(new Suscripcion_Gaming(103, 20, 3, 2026, 12.0, "caro_gamer", "caro@mail.com", "PC", true, 200)); agregadas++; }
+	if (!existe_id(104)) { agregar_a_lista(new Suscripcion_Video(104, 2, 4, 2026, 9.0, "diego_tv", "diego@mail.com", "HD", 1, false)); agregadas++; }
+	if (!existe_id(105)) { agregar_a_lista(new Suscripcion_Musica(105, 18, 5, 2026, 8.0, "eli_music", "eli@mail.com", "Standard", false)); agregadas++; }
+	if (!existe_id(106)) { agregar_a_lista(new Suscripcion_Gaming(106, 9, 6, 2026, 11.0, "fer_play", "fer@mail.com", "Console", false, 50)); agregadas++; }
 
 	if (agregadas == 0)
 	{
-		cout << "Los datos de ejemplo ya estaban cargados (IDs 101 a 106)." << endl;
+		cout << "The sample data was already loaded (IDs 101 to 106)." << endl;
 	}
 	else
 	{
-		cout << C_VERDE << "Se agregaron " << agregadas << " suscripciones de ejemplo." << C_RESET << endl;
-		cout << "Revisa el Panel del imperio para ver como vas!" << endl;
+		cout << C_VERDE << "Added " << agregadas << " sample subscriptions." << C_RESET << endl;
+		cout << "Check the Empire dashboard to see how you're doing!" << endl;
 	}
 }

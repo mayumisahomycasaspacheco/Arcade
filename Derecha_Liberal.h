@@ -15,7 +15,7 @@ public:
 	string descripcion();
 };
 
-Derecha_Liberal::Derecha_Liberal() : Inclinacion_Politica("Derecha Liberal", 0, 0)
+Derecha_Liberal::Derecha_Liberal() : Inclinacion_Politica("Liberal Right", 0, 0)
 {
 	//Ya se tienen los datos
 }
@@ -34,7 +34,7 @@ int Derecha_Liberal::evaluar(char respuesta1, char respuesta2, char respuesta3, 
 		puntaje = puntaje + 1;
 	}
 
-	if (respuesta2 == 'S')
+	if (respuesta2 == 'Y')
 	{
 		puntaje = puntaje + 1;
 	}
@@ -44,5 +44,5 @@ int Derecha_Liberal::evaluar(char respuesta1, char respuesta2, char respuesta3, 
 
 string Derecha_Liberal::descripcion()
 {
-	return "Defiende la libertad individual y de mercado. Prefiere un Estado que no financie religiones, aunque acepta que gobierne con valores.";
+	return "Defends individual and market freedom. Prefers a State that does not fund religions, though it accepts governing with values.";
 }

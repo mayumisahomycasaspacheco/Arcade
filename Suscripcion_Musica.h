@@ -9,7 +9,7 @@ private:
 	string calidad_audio;
 	bool modo_offline;
 public:
-	Suscripcion_Musica(int pid, int pdia, int pmes, int panio, double ptarifa_base, string pusuario, string pcorreo, string pcalidad_audio, bool pmodo_ofline);
+	Suscripcion_Musica(int pid, int pdia, int pmes, int panio, double ptarifa_base, string pusuario, string pcorreo, string pcalidad_audio, bool pmodo_offline);
 	~Suscripcion_Musica();
 
 	string getcalidad_audio();
@@ -58,7 +58,7 @@ double Suscripcion_Musica::calcular_importe()
 	double total = tarifa_base;
 
 
-	if (calidad_audio == "Alta")
+	if (calidad_audio == "High")
 	{
 		total = total + 3;
 	}
@@ -78,12 +78,12 @@ double Suscripcion_Musica::calcular_importe()
 
 void Suscripcion_Musica::mostrar_detalles()
 {
-	cout << "[SERVICIO MUSICA]" << endl;
+	cout << C_MAGENTA << "[MUSIC SERVICE]" << C_RESET << endl;
 	Suscripcion::mostrar_detalles();
-	cout << "Calidad Audio: " << calidad_audio << " | Offline: " << (modo_offline ? "Si" : "No") << " | Importe Final: S/ " << calcular_importe() << endl;
+	cout << "Audio Quality: " << calidad_audio << " | Offline: " << (modo_offline ? "Yes" : "No") << " | Final Amount: S/ " << calcular_importe() << endl;
 }
 
 string Suscripcion_Musica::gettipo()
 {
-	return "MUSICA";
+	return "MUSIC";
 }

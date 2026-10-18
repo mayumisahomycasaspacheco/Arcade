@@ -91,12 +91,12 @@ double Suscripcion_Video::calcular_importe()
 
 void Suscripcion_Video::mostrar_detalles()
 {
-	cout << "[SERVICIO DE VIDEO]" << endl;
+	cout << C_AZUL << "[VIDEO SERVICE]" << C_RESET << endl;
 	Suscripcion::mostrar_detalles();
-	cout << "Resolucion: " << resolucion << " | Pantallas: " << numero_pantallas << " | Importe Final: S/ " << calcular_importe() << endl;
+	cout << "Resolution: " << resolucion << " | Screens: " << numero_pantallas << " | Premium: " << (premium ? "Yes" : "No") << " | Final Amount: S/ " << calcular_importe() << endl;
 }
 
 string Suscripcion_Video::gettipo()
 {
 	return "VIDEO";
-}
+}

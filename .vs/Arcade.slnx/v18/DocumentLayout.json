@@ -8,9 +8,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\YUYU\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\YUYU\\AppData\\Local\\Temp\\9ee01318-24ad-43a7-b695-19b6c70238aa_Arcade (1).zip.8aa\\Arcade\\Plataforma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +31,7 @@
               "RelativeDocumentMoniker": "Utilidades.h",
               "ToolTip": "C:\\Users\\YUYU\\Desktop\\Arcade\\Utilidades.h",
               "RelativeToolTip": "Utilidades.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAE4AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAAAJYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-17T23:27:20.831Z",
               "EditorCaption": ""
@@ -50,7 +47,7 @@
         "Id": "bb2ba096-feb8-4417-86b4-1b63cc239a9c",
         "Display": 0,
         "X": -30,
-        "Y": 79,
+        "Y": 78,
         "Width": 1520,
         "Height": 741,
         "WindowState": 0
@@ -58,21 +55,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Plataforma.h",
-              "DocumentMoniker": "C:\\Users\\YUYU\\AppData\\Local\\Temp\\9ee01318-24ad-43a7-b695-19b6c70238aa_Arcade (1).zip.8aa\\Arcade\\Plataforma.h",
-              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\9ee01318-24ad-43a7-b695-19b6c70238aa_Arcade (1).zip.8aa\\Arcade\\Plataforma.h",
-              "ToolTip": "C:\\Users\\YUYU\\AppData\\Local\\Temp\\9ee01318-24ad-43a7-b695-19b6c70238aa_Arcade (1).zip.8aa\\Arcade\\Plataforma.h [Solo lectura]",
-              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\9ee01318-24ad-43a7-b695-19b6c70238aa_Arcade (1).zip.8aa\\Arcade\\Plataforma.h [Solo lectura]",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGUAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-10-17T23:14:24.757Z",
-              "EditorCaption": " [Solo lectura]"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -81,7 +65,7 @@
               "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h",
               "ToolTip": "C:\\Users\\YUYU\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h [Solo lectura]",
               "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\cbc7ec0f-b630-45ec-a56d-7f5fab932869_Arcade (1).zip.869\\Arcade\\Utilidades.h [Solo lectura]",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-10-17T23:26:16.684Z",
               "EditorCaption": " [Solo lectura]"

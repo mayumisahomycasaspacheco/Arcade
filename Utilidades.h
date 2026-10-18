@@ -81,3 +81,72 @@ inline string leer_linea(const string& mensaje)
 
 	return recortar(linea);
 }
+
+inline void mostrar_error(const string& mensaje)
+{
+	cout << C_ROJO << " [!] " << mensaje << C_RESET << endl;
+}
+
+inline int leer_entero_rango(const string& mensaje, int minimo, int maximo)
+{
+	while (true)
+	{
+		string texto = leer_linea(mensaje);
+		size_t inicio = (!texto.empty() && (texto[0] == '-' || texto[0] == '+')) ? 1 : 0;
+		bool valido = (inicio < texto.size()) && (texto.size() - inicio <= 18);
+
+		for (size_t i = inicio; valido && i < texto.size(); i++)
+		{
+			if (!isdigit((unsigned char)texto[i]))
+			{
+				valido = false;
+			}
+		}
+
+		if (valido)
+		{
+			long long valor = stoll(texto);
+
+			if (valor >= minimo && valor <= maximo)
+			{
+				return (int)valor;
+			}
+		}
+
+		mostrar_error("Ingresa un numero entero entre " + to_string(minimo) + " y " + to_string(maximo) + ".");
+	}
+}
+
+inline double leer_decimal_positivo(const string& mensaje)
+{
+	while (true)
+	{
+		string texto = leer_linea(mensaje);
+
+		for (size_t i = 0; i < texto.size(); i++)
+		{
+			if (texto[i] == ',')
+			{
+				texto[i] = '.';
+			}
+		}
+
+		if (!texto.empty())
+		{
+			char* fin = nullptr;
+			double valor = strtod(texto.c_str(), &fin);
+
+			if (*fin == '\0' && valor >= 0 && valor < 1000000)
+			{
+				return valor;
+			}
+		}
+
+		mostrar_error("Ingresa un numero valido (mayor o igual a 0).");
+	}
+}
+
+inline bool leer_confirmacion(const string& mensaje)
+{
+
+}
